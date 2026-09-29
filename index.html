@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Banking Project</title>
+
+<style>
+@page {
+    size: 297mm 210mm;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #ddd;
+    font-family: "Times New Roman", serif;
+    color: #111;
+}
+
+.page {
+    width: 297mm;
+    height: 210mm;
+    background: white;
+    margin: 10mm auto;
+    padding: 17mm 20mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    border: 1px solid #111;
+}
+
+/* PREMIUM DOUBLE BORDER */
+.page::before {
+    content: "";
+    position: absolute;
+    top: 7mm;
+    left: 7mm;
+    right: 7mm;
+    bottom: 7mm;
+    border: 2px solid #111;
+    pointer-events: none;
+}
+
+.page::after {
+    content: "";
+    position: absolute;
+    top: 10mm;
+    left: 10mm;
+    right: 10mm;
+    bottom: 10mm;
+    border: 1px solid #555;
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    text-align: center;
+    font-size: 34px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 3mm 0 8mm;
+    border-bottom: 2px solid #111;
+    padding-bottom: 7px;
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 2mm 0 9mm;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #111;
+}
+
+h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 8px 0;
+}
+
+p, li {
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+ul {
+    margin-top: 5px;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18mm;
+}
+
+.box {
+    border: 1px solid #111;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.box h3 {
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+.number {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    border: 1px solid #111;
+    margin-right: 7px;
+    font-weight: bold;
+}
+
+.quote {
+    border-left: 5px solid #111;
+    padding: 10px 15px;
+    margin: 15px 0;
+    font-size: 17px;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #111;
+    padding: 8px;
+    font-size: 14px;
+}
+
+th {
+    background: #eee;
+    text-transform: uppercase;
+}
+
+.step {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+    align-items: flex-start;
+}
+
+.step-no {
+    min-width: 35px;
+    height: 35px;
+    border: 2px solid #111;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 31px;
+    font-weight: bold;
+}
+
+.footer {
+    position: absolute;
+    bottom: 11mm;
+    left: 20mm;
+    right: 20mm;
+    text-align: center;
+    border-top: 1px solid #111;
+    padding-top: 5px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .page {
+        margin: 0;
+        border: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+<div class="content">
+
+<h1>01 • Introduction to E-Banking</h1>
+
+<div class="columns">
+
+<div>
+<h3>What is E-Banking?</h3>
+
+<p>
+E-Banking, also known as electronic banking, is a system that allows
+customers to access banking services through electronic devices such as
+computers, smartphones and ATMs.
+</p>
+
+<p>
+Instead of visiting a bank branch for every transaction, customers can
+perform many activities electronically. These include checking account
+balances, transferring money, paying bills and managing accounts.
+</p>
+
+<div class="quote">
+“E-Banking brings banking services closer to the customer through digital technology.”
+</div>
+</div>
+
+<div>
+<h3>Main Features</h3>
+
+<ul>
+<li>Banking services available electronically.</li>
+<li>Access through smartphones and computers.</li>
+<li>Fast money transfers.</li>
+<li>Online bill payments.</li>
+<li>Digital account management.</li>
+<li>24-hour access to many services.</li>
+</ul>
+
+<div class="box">
+<h3>Traditional Banking vs E-Banking</h3>
+
+<table>
+<tr>
+<th>Traditional</th>
+<th>E-Banking</th>
+</tr>
+<tr>
+<td>Branch visit often required</td>
+<td>Services available online</td>
+</tr>
+<tr>
+<td>Paper-based processes</td>
+<td>Digital processes</td>
+</tr>
+<tr>
+<td>Limited branch hours</td>
+<td>Many services available 24×7</td>
+</tr>
+</table>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 01</div>
+</section>
+
+
+<!-- PAGE 2 -->
+<section class="page">
+<div class="content">
+
+<h1>02 • Evolution of E-Banking</h1>
+
+<p>
+The development of electronic banking has been closely connected with
+advances in computers, telecommunications and the internet. Banking has
+gradually moved from paper-based processes towards digital services.
+</p>
+
+<div class="step">
+<div class="step-no">1</div>
+<div>
+<h3>Computerised Banking</h3>
+<p>
+Banks began using computers to maintain customer records and process
+transactions more efficiently.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-no">2</div>
+<div>
+<h3>ATMs</h3>
+<p>
+Automated Teller Machines allowed customers to withdraw cash and perform
+selected banking activities without entering a branch.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-no">3</div>
+<div>
+<h3>Internet Banking</h3>
+<p>
+The growth of the internet enabled customers to access accounts and
+perform transactions through banking websites.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-no">4</div>
+<div>
+<h3>Mobile Banking</h3>
+<p>
+Smartphones and mobile applications made banking services more accessible
+and convenient.
+</p>
+</div>
+</div>
+
+<div class="step">
+<div class="step-no">5</div>
+<div>
+<h3>Digital Payments</h3>
+<p>
+Modern payment systems allow people to transfer money and make payments
+electronically using various digital methods.
+</p>
+</div>
+</div>
+
+<div class="box">
+<h3>Impact of Technology</h3>
+<p>
+Technology has made banking faster, more convenient and accessible.
+However, users must also understand digital security and protect their
+banking information.
+</p>
+</div>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 02</div>
+</section>
+
+
+<!-- PAGE 3 -->
+<section class="page">
+<div class="content">
+
+<h1>03 • Types of E-Banking Services</h1>
+
+<div class="columns">
+
+<div>
+
+<div class="box">
+<h3><span class="number">01</span>Internet Banking</h3>
+<p>
+Customers can access banking services through an official bank website
+using a computer or other internet-connected device.
+</p>
+</div>
+
+<div class="box">
+<h3><span class="number">02</span>Mobile Banking</h3>
+<p>
+Mobile banking applications allow users to check balances, transfer funds,
+pay bills and manage accounts through smartphones.
+</p>
+</div>
+
+<div class="box">
+<h3><span class="number">03</span>ATM Services</h3>
+<p>
+ATMs provide services such as cash withdrawal, balance enquiry and other
+selected banking functions.
+</p>
+</div>
+
+</div>
+
+<div>
+
+<div class="box">
+<h3><span class="number">04</span>Electronic Transfers</h3>
+<p>
+Electronic transfer systems allow money to be transferred between bank
+accounts without using physical cash.
+</p>
+</div>
+
+<div class="box">
+<h3><span class="number">05</span>Card Banking</h3>
+<p>
+Debit and credit cards can be used for payments and other authorised
+banking transactions.
+</p>
+</div>
+
+<div class="box">
+<h3><span class="number">06</span>Online Bill Payment</h3>
+<p>
+Customers can pay utility bills and other services electronically through
+available digital banking facilities.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<h3>Common E-Banking Activities</h3>
+
+<table>
+<tr>
+<th>Activity</th>
+<th>Purpose</th>
+<th>Method</th>
+</tr>
+<tr>
+<td>Balance Enquiry</td>
+<td>Check available account balance</td>
+<td>App / Website / ATM</td>
+</tr>
+<tr>
+<td>Fund Transfer</td>
+<td>Send money electronically</td>
+<td>Digital Banking</td>
+</tr>
+<tr>
+<td>Bill Payment</td>
+<td>Pay bills online</td>
+<td>App / Website</td>
+</tr>
+</table>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 03</div>
+</section>
+
+
+<!-- PAGE 4 -->
+<section class="page">
+<div class="content">
+
+<h1>04 • Digital Payments & UPI</h1>
+
+<div class="columns">
+
+<div>
+<h3>What is Digital Payment?</h3>
+
+<p>
+A digital payment is a payment made electronically without the physical
+exchange of cash. Digital payments can be made through mobile applications,
+cards, internet banking and other electronic systems.
+</p>
+
+<h3>UPI</h3>
+
+<p>
+The Unified Payments Interface, commonly known as UPI, is a digital
+payment system that enables users to make and receive payments through
+participating banking applications.
+</p>
+
+<div class="box">
+<h3>Advantages</h3>
+<ul>
+<li>Quick electronic transactions.</li>
+<li>Convenient for everyday payments.</li>
+<li>Reduces the need to carry cash.</li>
+<li>Useful for person-to-person payments.</li>
+</ul>
+</div>
+</div>
+
+<div>
+
+<h3>How a Digital Payment Works</h3>
+
+<div class="step">
+<div class="step-no">1</div>
+<div>Select the appropriate banking or payment application.</div>
+</div>
+
+<div class="step">
+<div class="step-no">2</div>
+<div>Enter or select the required payment details.</div>
+</div>
+
+<div class="step">
+<div class="step-no">3</div>
+<div>Verify the transaction details carefully.</div>
+</div>
+
+<div class="step">
+<div class="step-no">4</div>
+<div>Authorise the payment using the required security method.</div>
+</div>
+
+<div class="step">
+<div class="step-no">5</div>
+<div>Check the transaction confirmation or receipt.</div>
+</div>
+
+<div class="quote">
+Always verify the recipient and payment amount before confirming a digital transaction.
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 04</div>
+</section>
+
+
+<!-- PAGE 5 -->
+<section class="page">
+<div class="content">
+
+<h1>05 • Advantages of E-Banking</h1>
+
+<table>
+<tr>
+<th>Advantage</th>
+<th>Explanation</th>
+</tr>
+
+<tr>
+<td>Convenience</td>
+<td>
+Customers can access many banking services from home or other suitable
+locations using digital devices.
+</td>
+</tr>
+
+<tr>
+<td>Speed</td>
+<td>
+Many electronic transactions can be completed quickly compared with
+traditional paper-based processes.
+</td>
+</tr>
+
+<tr>
+<td>Accessibility</td>
+<td>
+Digital banking provides access to many services beyond normal branch
+visiting hours.
+</td>
+</tr>
+
+<tr>
+<td>Reduced Paperwork</td>
+<td>
+Electronic records and digital processes can reduce the need for physical
+documents for certain services.
+</td>
+</tr>
+
+<tr>
+<td>Easy Payments</td>
+<td>
+Users can make various payments electronically without carrying physical
+cash.
+</td>
+</tr>
+
+<tr>
+<td>Account Management</td>
+<td>
+Customers can view balances and transaction information through digital
+banking channels.
+</td>
+</tr>
+</table>
+
+<div class="columns" style="margin-top:12mm;">
+
+<div class="box">
+<h3>For Customers</h3>
+<ul>
+<li>Saves time.</li>
+<li>Easy access to services.</li>
+<li>Quick payments and transfers.</li>
+<li>Convenient account management.</li>
+</ul>
+</div>
+
+<div class="box">
+<h3>For Banks</h3>
+<ul>
+<li>Efficient service delivery.</li>
+<li>Digital record keeping.</li>
+<li>Reduced dependence on paper processes.</li>
+<li>Improved customer accessibility.</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 05</div>
+</section>
+
+
+<!-- PAGE 6 -->
+<section class="page">
+<div class="content">
+
+<h1>06 • Risks & Challenges of E-Banking</h1>
+
+<div class="columns">
+
+<div>
+
+<h3>Major Challenges</h3>
+
+<div class="box">
+<h3>Cybersecurity</h3>
+<p>
+Digital banking systems need strong security because financial information
+and transactions are handled electronically.
+</p>
+</div>
+
+<div class="box">
+<h3>Phishing & Fraud</h3>
+<p>
+Fraudsters may attempt to trick users into revealing confidential
+information through fake messages, websites or calls.
+</p>
+</div>
+
+<div class="box">
+<h3>Technical Problems</h3>
+<p>
+Internet problems, system maintenance or technical failures can sometimes
+affect access to digital services.
+</p>
+</div>
+
+</div>
+
+<div>
+
+<h3>How to Stay Safe</h3>
+
+<ul>
+<li>Never share your OTP or PIN.</li>
+<li>Use strong and unique passwords.</li>
+<li>Use official banking applications.</li>
+<li>Check website addresses carefully.</li>
+<li>Do not click suspicious links.</li>
+<li>Check transaction notifications.</li>
+<li>Report suspicious activity to the bank.</li>
+</ul>
+
+<div class="quote">
+Your banking password, PIN and OTP are confidential. Keep them private.
+</div>
+
+<div class="box">
+<h3>Remember</h3>
+<p>
+Banks and genuine service providers do not require customers to reveal
+confidential security credentials unnecessarily.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 06</div>
+</section>
+
+
+<!-- PAGE 7 -->
+<section class="page">
+<div class="content">
+
+<h1>07 • E-Banking & Financial Inclusion</h1>
+
+<div class="columns">
+
+<div>
+
+<h3>Financial Inclusion</h3>
+
+<p>
+Financial inclusion means making useful and affordable financial services
+available to individuals and communities. E-Banking can support financial
+inclusion by making certain banking services easier to access.
+</p>
+
+<div class="box">
+<h3>Benefits</h3>
+<ul>
+<li>Greater access to financial services.</li>
+<li>Convenient digital payments.</li>
+<li>Easier access to account information.</li>
+<li>Support for small businesses and individuals.</li>
+<li>Reduced dependence on physical cash for some transactions.</li>
+</ul>
+</div>
+
+</div>
+
+<div>
+
+<h3>Role in the Modern Economy</h3>
+
+<p>
+E-Banking supports economic activity by making payments and financial
+transactions more efficient. Businesses can receive payments, transfer
+funds and manage accounts electronically.
+</p>
+
+<table>
+<tr>
+<th>Area</th>
+<th>Contribution</th>
+</tr>
+
+<tr>
+<td>Business</td>
+<td>Faster payments and financial management</td>
+</tr>
+
+<tr>
+<td>Consumers</td>
+<td>Convenient access to banking services</td>
+</tr>
+
+<tr>
+<td>Government</td>
+<td>Supports digital financial transactions</td>
+</tr>
+
+<tr>
+<td>Society</td>
+<td>Encourages wider use of formal financial services</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<div class="quote">
+E-Banking is not only about technology; it is also about making financial
+services more convenient and accessible.
+</div>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 07</div>
+</section>
+
+
+<!-- PAGE 8 -->
+<section class="page">
+<div class="content">
+
+<h1>08 • Conclusion & Bibliography</h1>
+
+<h3>Conclusion</h3>
+
+<p>
+E-Banking has transformed the way people access and use financial
+services. Through internet banking, mobile banking, ATMs, cards, electronic
+transfers and digital payment systems, many banking activities can now be
+performed electronically.
+</p>
+
+<p>
+The major benefits of E-Banking include convenience, speed, accessibility
+and efficient account management. At the same time, digital banking
+requires responsible use because cybersecurity, fraud and privacy are
+important concerns.
+</p>
+
+<p>
+With increasing digitalisation, E-Banking is becoming an important part of
+modern economic life. Users should take advantage of its convenience while
+following safe digital banking practices.
+</p>
+
+<div class="box">
+<h3>Key Takeaways</h3>
+
+<ul>
+<li>E-Banking provides banking services through electronic channels.</li>
+<li>Internet and mobile banking have increased convenience.</li>
+<li>Digital payments allow electronic transfer of money.</li>
+<li>Cybersecurity awareness is essential.</li>
+<li>E-Banking can support financial inclusion and economic activity.</li>
+</ul>
+</div>
+
+<h3>Bibliography</h3>
+
+<ul>
+<li>Reserve Bank of India – Banking and financial education resources</li>
+<li>NCERT – Economics / Social Science learning material</li>
+<li>School notes and classroom reference material</li>
+</ul>
+
+<div style="text-align:center; margin-top:12mm;">
+<h3>THANK YOU</h3>
+<p><strong>— END OF PROJECT —</strong></p>
+</div>
+
+</div>
+<div class="footer">E-BANKING PROJECT • PAGE 08</div>
+</section>
+
+</body>
+</html>
